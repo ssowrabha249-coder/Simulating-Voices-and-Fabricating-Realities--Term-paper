@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.29)  30 SEP 2026 18:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.29)  30 SEP 2026 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,7 +1009,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 /MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}])
 (sections/035_experiment.tex [3{C:/Users/badar/AppData/Local/Programs/MiKTeX/fo
 nts/enc/dvips/lm/lm-mathsy.enc}]
-<figures/fig_crowd_paper.pdf, id=310, 469.755pt x 231.26399pt>
+<figures/fig_crowd_paper.pdf, id=311, 469.755pt x 231.26399pt>
 File: figures/fig_crowd_paper.pdf Graphic file (type pdf)
 <use figures/fig_crowd_paper.pdf>
 Package pdftex.def Info: figures/fig_crowd_paper.pdf  used on input line 33.
@@ -1019,7 +1019,7 @@ Package pdftex.def Info: figures/fig_crowd_paper.pdf  used on input line 33.
 c}{C:/Users/badar/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}])
 (sections/05_disinformation_generation.tex [5{C:/Users/badar/AppData/Local/Prog
 rams/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./figures/fig_crowd_paper.pdf>]
-<figures/fig_detectors_paper.pdf, id=357, 448.07399pt x 260.17201pt>
+<figures/fig_detectors_paper.pdf, id=359, 448.07399pt x 260.17201pt>
 File: figures/fig_detectors_paper.pdf Graphic file (type pdf)
 <use figures/fig_detectors_paper.pdf>
 Package pdftex.def Info: figures/fig_detectors_paper.pdf  used on input line 24
@@ -1120,7 +1120,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  25512 strings out of 467871
  473106 string characters out of 5418376
- 898638 words of memory out of 5000000
+ 898699 words of memory out of 5000000
  53547 multiletter control sequences out of 15000+600000
  706008 words of font info for 209 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1146,9 +1146,9 @@ dar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/bad
 ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/bad
 ar/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/
 badar/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (17 pages, 576933 bytes).
+Output written on main.pdf (17 pages, 578534 bytes).
 PDF statistics:
- 607 PDF objects out of 1000 (max. 8388607)
+ 611 PDF objects out of 1000 (max. 8388607)
  93 named destinations out of 1000 (max. 500000)
  41726 words of extra memory for PDF output out of 42996 (max. 10000000)
 
