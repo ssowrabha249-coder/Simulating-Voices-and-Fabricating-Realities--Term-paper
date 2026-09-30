@@ -1,0 +1,19 @@
+\section{Whose Opinions Do Models Reflect? Demographic Alignment and Steering Limits}
+\label{sec:demographic_alignment}
+
+\subsection{The OpinionQA Benchmark and Alignment Metric}
+Santurkar et al.~\cite{santurkar2023whose} test whether LMs are neutral with respect to public opinion. They build the \emph{OpinionQA} dataset from 15 of Pew Research's American Trends Panel surveys, with 1,498 multiple-choice questions ranging from science and politics to private life, and compare model answers with the answers of the US population and of 60 demographic groups. They evaluate 9 LMs from AI21 Labs and OpenAI with 350M to 178B parameters. % SOURCE: Santurkar et al. p.2 (1498 questions, 9 LMs, 350M-178B, AI21 Labs and OpenAI), p.4 (15 ATP polls), p.1 (60 US demographic groups)
+
+The model's opinion distribution for a question is obtained from the next-token probabilities of the answer options. Because the options are ordinal (e.g.\ \emph{``A great deal''} \dots\ \emph{``Not at all''}), the authors compare distributions with the 1-Wasserstein distance ($W_1$) rather than with measures that ignore the order of the options~\cite{santurkar2023whose}. % SOURCE: Santurkar et al. p.3 (log probabilities, normalised), p.6 (choice of 1-Wasserstein distance, ordinal mapping, refusals excluded)
+The alignment of two distributions $D_1, D_2$ over a question set $\mathcal{Q}$ is
+\begin{equation}
+\mathcal{A}(D_1, D_2; \mathcal{Q}) = \frac{1}{|\mathcal{Q}|} \sum_{q \in \mathcal{Q}} \left( 1 - \frac{W_1(D_1(q), D_2(q))}{N - 1} \right),
+\label{eq:wasserstein}
+\end{equation}
+in which $N$ counts the non-refusal answer options, so that $N-1$ is the largest possible distance and $\mathcal{A} \in [0,1]$~\cite{santurkar2023whose}. % SOURCE: Santurkar et al. p.6 (alignment definition)
+
+\subsection{Demographic Skews and Limits of Steering}
+The study reports substantial misalignment between LM opinions and those of US demographic groups~\cite{santurkar2023whose}. Two findings are central for this review. First, human-feedback-tuned models such as \texttt{text-davinci-003} shift the groups they align with best: from moderate-to-conservative, lower-income groups for base models towards more liberal, educated and higher-income groups. Second, some large groups are poorly represented by \emph{all} models, for example people aged 65+, widowed people and people with high religious attendance. The skew is, however, not uniform: generally liberal models still express conservative views on some topics such as religion. % SOURCE: Santurkar et al. p.2 (shift towards liberal, educated, wealthy; 65+, Mormon, widowed), p.8 (base: moderate/conservative low income; RLHF: liberal high income), p.9 (65+, widowed, high religious attendance), p.3 (not consistent across topics; conservative on religion)
+
+The authors also try to \emph{steer} models towards a group by adding the group to the prompt in three ways: as the answer to a previous question (QA), as a short biography (BIO), or as an instruction to answer as a group member (PORTRAY). Most models become better aligned with a group when prompted in this way, but the improvements are modest, and none of the representativeness problems is resolved by steering~\cite{santurkar2023whose}. % SOURCE: Santurkar et al. p.3 (QA/BIO/PORTRAY; "improvements are modest: none of the ... problems are resolved by steering")
+For opinion research this suggests that a prompt alone is not enough to turn an LM into a representative simulated respondent of a given group.

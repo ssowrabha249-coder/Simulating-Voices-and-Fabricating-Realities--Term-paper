@@ -1,0 +1,18 @@
+\section{Detecting Propaganda: Shared-Task Systems and LLMs}
+\label{sec:propaganda_detection}
+
+\subsection{SemEval-2020 Task 11}
+A common benchmark for fine-grained propaganda analysis is \emph{SemEval-2020 Task 11: Detection of Propaganda Techniques in News Articles}~\cite{dasanmartino2020semeval}. It has two subtasks:
+\begin{enumerate}
+    \item \textbf{Span Identification (SI):} find the text fragments that contain a propaganda technique.
+    \item \textbf{Technique Classification (TC):} assign one of 14 techniques (e.g.\ \emph{Loaded Language}, \emph{Name Calling}, \emph{Doubt}, \emph{Appeal to Fear}) to a given fragment. % SOURCE: Da San Martino et al. p.2 and p.4 (fourteen techniques, reduced from eighteen)
+\end{enumerate}
+TC is evaluated with micro-averaged F1, which for this single-label setting equals accuracy~\cite{dasanmartino2020semeval}. % SOURCE: Da San Martino et al. p.7
+Most top systems were ensembles of fine-tuned Transformer models such as BERT and RoBERTa. On the test set, the best SI system reached an F1 of 51.55 and the best TC system a micro-F1 of 62.07, compared with 25.20 for the organisers' TC baseline~\cite{dasanmartino2020semeval}. % SOURCE: Da San Martino et al. p.8 (ensembles; RoBERTa-CRF of ApplicaAI), Table 5 p.14 (SI: Hitachi 51.55), Table 6 p.15 (TC: ApplicaAI 62.07; Baseline 25.20)
+The organisers later found a bug in the scoring script, but report that the corrected ranking does not differ substantially~\cite{dasanmartino2020semeval}. % SOURCE: notes under Table 5 p.14 and Table 6 p.15
+These figures show that the task is hard even for strong supervised models, especially for span identification.
+
+\subsection{An LLM-Based Detection System}
+Gaeta et al.~\cite{gaeta2025towards} propose a computational approach that uses both proprietary and open-source LLMs to detect propaganda techniques and to locate the parts of the text in which they are used. Their method relies on the choice of LLMs and on prompting strategies, namely role-playing, a reduced context window, few-shot examples and chain-of-thought reasoning. They implement the approach as a prototype system and evaluate it on the news articles of SemEval-2020 Task 11, where they report notable improvements over state-of-the-art methods~\cite{gaeta2025towards}. % SOURCE: Gaeta et al. publisher abstract (doi:10.1016/j.compeleceng.2025.110765). The full text could not be retrieved, so no scores are reported here.
+
+Because the full text of this article could not be accessed for this review, its exact scores, models and experimental settings are not reported here. This is a limitation of the present paper (Section~\ref{sec:limitations}). What can be said is that the approach shifts effort from training a supervised model to designing prompts and selecting models, and that it is evaluated on the same benchmark as the shared-task systems above.

@@ -1,0 +1,18 @@
+# Source: Vykopal et al. (2024), ACL 2024, Table 6, PDF page 8 (https://aclanthology.org/2024.acl-long.793).
+# Macro-F1 of machine-generated-text detectors on the LLM-generated disinformation articles
+# (optimal threshold per detector). Values copied verbatim from the table; no values added or changed.
+# group: "ELECTRA-large fine-tuned on MULTITuDE" rows name the generator whose texts the detector was trained on.
+detector,group,macro_f1
+ChatGPT,ELECTRA-large (MULTITuDE),0.82
+GPT-3 Davinci,ELECTRA-large (MULTITuDE),0.77
+Vicuna 13B,ELECTRA-large (MULTITuDE),0.76
+GPT-4,ELECTRA-large (MULTITuDE),0.68
+OPT-IML-Max-1.3B,ELECTRA-large (MULTITuDE),0.08
+detection-longformer,Other detectors,0.71
+GPTZero,Other detectors,0.64
+ZeroGPT,Other detectors,0.53
+GLTR,Other detectors,0.48
+LLMDet,Other detectors,0.46
+simpleai-detector,Other detectors,0.44
+RoBERTa-large OpenAI,Other detectors,0.40
+Grover,Other detectors,0.36

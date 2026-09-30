@@ -1,0 +1,35 @@
+% Figure 1: conceptual framework of the review. All statements in the study boxes are taken from the
+% reviewed papers (page references in the section texts); the two yellow boxes are this paper's own synthesis.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  root/.style={draw=black!70, fill=black!8, rounded corners=2pt, align=center, inner sep=4pt, text width=6.0cm},
+  role/.style={draw=#1!70!black, fill=#1!12, rounded corners=2pt, align=center, inner sep=3pt, text width=7.0cm, font=\footnotesize\bfseries},
+  study/.style={draw=#1!60!black, fill=white, rounded corners=2pt, align=left, inner sep=3pt, text width=3.2cm, anchor=north},
+  synth/.style={draw=black!70, fill=yellow!15, rounded corners=2pt, align=center, inner sep=3pt, text width=7.0cm, anchor=north},
+  arr/.style={-{Latex[length=2mm]}, black!60, thick}
+]
+\node[root] (llm) at (0,0) {\textbf{Instruction-tuned / RLHF LLMs}\\ fluent, steerable text generation~\cite{ouyang2022training}};
+\node[role=blue] (r1) at (-3.95,-1.35) {Role 1: LLMs as synthetic personas};
+\node[role=red]  (r2) at ( 3.95,-1.35) {Role 2: LLMs and information disorder};
+
+\node[study=blue] (aher) at (-5.9,-1.85) {\textbf{Aher et al.}~\cite{aher2023using}\\ Turing Experiments: 3 of 4 classic findings replicated; \emph{hyper-accuracy distortion} in wisdom-of-crowds task};
+\node[study=blue] (sant) at (-2.0,-1.85) {\textbf{Santurkar et al.}~\cite{santurkar2023whose}\\ OpinionQA: LM opinions misaligned with US groups; steering helps only modestly};
+\node[study=red]  (vyk)  at ( 2.0,-1.85) {\textbf{Vykopal et al.}~\cite{vykopal2024disinformation}\\ Generation: LLMs write convincing disinformation; best detectors $\sim$0.8 macro-F1};
+\node[study=red]  (gae)  at ( 5.9,-1.85) {\textbf{Gaeta et al.}~\cite{gaeta2025towards}, SemEval~\cite{dasanmartino2020semeval}\\ Detection: prompted LLMs find propaganda techniques and spans};
+
+\draw[arr] (llm.south) -- ++(0,-0.25) -| (r1.north);
+\draw[arr] (llm.south) -- ++(0,-0.25) -| (r2.north);
+
+\node[synth] (ctrl) at (-3.95,-5.0) {\textbf{Controllability gap} (Sec.~\ref{sec:comparative_synthesis})\\ prompting steers analytic tasks more easily than opinion distributions};
+\node[synth] (asym) at ( 3.95,-5.0) {\textbf{Generation--detection asymmetry} (Sec.~\ref{sec:comparative_synthesis})\\ cheap generation vs.\ costly, imperfect detection};
+
+\draw[arr, dashed] (aher.south) -- (aher.south |- ctrl.north);
+\draw[arr, dashed] (sant.south) -- (sant.south |- ctrl.north);
+\draw[arr, dashed] (vyk.south) -- (vyk.south |- asym.north);
+\draw[arr, dashed] (gae.south) -- (gae.south |- asym.north);
+\end{tikzpicture}
+\caption{Conceptual framework of this review. The four studies are grouped by the role of the LLM; the two yellow boxes are the cross-study tensions derived in this paper (own synthesis, not a finding of any single study).}
+\label{fig:framework}
+\end{figure}

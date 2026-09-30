@@ -1,0 +1,22 @@
+% Table 1: qualitative comparison of the four reviewed studies. Every entry is traceable to the
+% source pages given in the section texts (Sections 3-6). Replaces the former F1 table (unverifiable values removed).
+\begin{table}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{1.9cm}p{3.0cm}p{2.7cm}p{1.0cm}p{4.9cm}@{}}
+\toprule
+\textbf{Study} & \textbf{Method / task} & \textbf{Data \& models} & \textbf{Lang.} & \textbf{Main finding} \\
+\midrule
+Aher et al.~\cite{aher2023using} (2023) & Turing Experiments: simulate participants of 4 human-subject studies & Own variants of classic studies; GPT-3 family, ChatGPT, GPT-4 & EN & 3 of 4 findings replicated by the largest models; \emph{hyper-accuracy distortion} in wisdom-of-crowds task \\
+\addlinespace
+Santurkar et al.~\cite{santurkar2023whose} (2023) & Compare LM and human opinion distributions ($W_1$-based alignment) & OpinionQA: 1,498 questions, 60 US groups; 9 LMs & EN (US) & Substantial misalignment; RLHF models shift towards liberal, educated, wealthy groups; steering gains modest \\
+\addlinespace
+Vykopal et al.~\cite{vykopal2024disinformation} (2024) & Prompt LLMs to write disinformation articles; human annotation; detector test & 20 narratives, 5 categories, 1,200 texts; 10 LLMs & EN & Several models write convincing disinformation; large differences in safety; detectors up to 0.82 macro-F1 \\
+\addlinespace
+Gaeta et al.~\cite{gaeta2025towards} (2025) & Prompted LLMs (role-play, few-shot, chain-of-thought) detect propaganda techniques and spans & SemEval-2020 Task~11 news articles; proprietary and open LLMs & n/s$^{*}$ & Reports notable improvements over state-of-the-art methods (scores not verified here$^{*}$) \\
+\bottomrule
+\end{tabular}
+\caption{Qualitative comparison of the four reviewed studies (own analysis). $^{*}$Based on the publisher abstract only; the full text could not be accessed (see Section~\ref{sec:limitations}). n/s = not stated in the accessible text.}
+\label{tab:comparison}
+\end{table}
